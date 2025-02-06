@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOIPSU Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #212121;
+            padding: 2rem 1rem;
+            border-right: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #888;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .search-bar {
+            background-color: #2a2a2a;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: #fff;
+            width: 300px;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:hover, .search-bar:focus {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            outline: none;
+            background-color: #333;
+        }
+
+        /* Stats Cards */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card.sales { 
+            background-color: rgba(144, 202, 249, 0.1); 
+        }
+        .stat-card.earnings { 
+            background-color: rgba(174, 234, 0, 0.1); 
+        }
+        .stat-card.orders { 
+            background-color: rgba(186, 104, 200, 0.1); 
+        }
+
+        /* Chart Section */
+        .chart-container {
+            background-color: #212121;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .chart-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Products Table */
+        .products-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #212121;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .products-table th,
+        .products-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .products-table th {
+            background-color: #1a1a1a;
+            font-weight: 500;
+            color: #888;
+        }
+
+        .product-row {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-row:hover {
+            background-color: #2a2a2a;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .product-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">GOIPSU</div>
+            <div class="nav-item active">Dashboard</div>
+            <div class="nav-item">Products</div>
+            <div class="nav-item">Orders</div>
+            <div class="nav-item">Sales</div>
+            <div class="nav-item">Reports</div>
+            <div class="nav-item">Settings</div>
+            
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <input type="text" class="search-bar" placeholder="Search here">
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card sales">
+                    <div>TOTAL SALES</div>
+                    <h2>$9,568.19</h2>
+                </div>
+                <div class="stat-card earnings">
+                    <div>TOTAL EARNINGS</div>
+                    <h2>$4,593.36</h2>
+                </div>
+                <div class="stat-card orders">
+                    <div>TOTAL ORDERS</div>
+                    <h2>150k</h2>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="chart-container">
+                <h3>Earning Analytics</h3>
+
+                <div style="height: 200px; width: 100%; margin-top: 1rem; border-bottom: 1px solid #444;">
+                    <img src="https://4kwallpapers.com/images/wallpapers/heartbeat-3840x2160-13817.png"
+                    height="100%" width="100%" alt="">
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>PRODUCT</th>
+                        <th>PRICE</th>
+                        <th>ORDERS</th>
+                        <th>STOCK</th>
+                        <th>AMOUNT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="product-row">
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="product-img"></div>
+                                Nike Revolution 3
+                            </div>
+                        </td>
+                        <td>$250</td>
+                        <td>47</td>
+                        <td>23</td>
+                        <td>$12560</td>
+                    </tr>
+                    <tr class="product-row">
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="product-img"></div>
+                                Green Plain T-shirt
+                            </div>
+                        </td>
+                        <td>$79</td>
+                        <td>98</td>
+                        <td>07</td>
+                        <td>$2368</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
