@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2b0b0;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      background: #333;
+      color: #b8daf4;
+      width: 180px;
+      padding: 20px 10px;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+    .sidebar a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 12px 0;
+      font-size: 15px;
+    }
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+    .cards {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      border-radius: 5px;
+      padding: 18px;
+      box-shadow: 0 2px 6px #0001;
+      min-width: 140px;
+      flex: 1;
+      margin-bottom: 15px;
+    }
+    .card-title {
+      font-size: 14px;
+      color: #555;
+    }
+    .card-value {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 8px;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <a href="#">Home</a>
+      <a href="#">Orders</a>
+      <a href="#">Products</a>
+      <a href="#">Users</a>
+      <a href="#">Settings</a>
+    </div>
+    <div class="main">
+      <h1>Admin Overview</h1>
+      <div class="cards">
+        <div class="card">
+          <div class="card-title">Total Sales</div>
+          <div class="card-value">$12,340</div>
+        </div>
+        <div class="card">
+          <div class="card-title">New Users</div>
+          <div class="card-value">1,230</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Orders</div>
+          <div class="card-value">320</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Pending Issues</div>
+          <div class="card-value">5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+Git Commands and Their Uses
+
+1. git config
+   - Set user name and email for commits.
+   - Example: git config --global user.name "Your Name"
+             git config --global user.email "you@example.com"
+
+2. git init
+   - Initialize a new Git repository in the current directory.
+   - Example: git init
+
+3. git clone <repository_url>
+   - Copy a remote repository to your local machine.
+   - Example: git clone https://github.com/user/repo.git
+
+4. git status
+   - Show the current status of files (staged, unstaged, untracked).
+   - Example: git status
+
+5. git add <file_name>
+   - Stage a file for the next commit.
+   - Example: git add index.html
+
+6. git add .
+   - Stage all changed files for the next commit.
+   - Example: git add .
+
+7. git commit -m "message"
+   - Commit staged changes with a message.
+   - Example: git commit -m "Initial commit"
+
+8. git log
+   - Show the commit history.
+   - Example: git log
+
+9. git branch
+   - List all branches or create a new branch.
+   - Example: git branch
+             git branch new-feature
+
+10. git checkout <branch_name>
+    - Switch to another branch.
+    - Example: git checkout main
+
+11. git checkout -b <branch_name>
+    - Create and switch to a new branch.
+    - Example: git checkout -b feature-x
+
+12. git merge <branch_name>
+    - Merge another branch into the current branch.
+    - Example: git merge feature-x
+
+13. git remote add origin <url>
+    - Add a remote repository.
+    - Example: git remote add origin https://github.com/user/repo.git
+
+14. git push origin <branch_name>
+    - Push your commits to the remote repository.
+    - Example: git push origin main
+
+15. git pull origin <branch_name>
+    - Fetch and merge changes from the remote repository.
+    - Example: git pull origin main
+
+16. git fetch
+    - Download new data from a remote repository without merging.
+    - Example: git fetch origin
+
+17. git rm <file>
+    - Remove a file from the working directory and staging area.
+    - Example: git rm oldfile.txt
+
+18. git stash
+    - Temporarily save changes that are not ready to commit.
+    - Example: git stash
+
+19. git stash pop
+    - Reapply stashed changes.
+    - Example: git stash pop
+
+20. git tag <tag_name>
+    - Create a tag for a specific commit.
+    - Example: git tag v1.0.0
+
+21. git log --oneline
+    - Show a simplified log of commits.
+    - Example: git log --oneline
+
+22. git diff
+    - Show differences between files or commits.
+    - Example: git diff
+
+23. git reset --hard <commit>
+    - Reset your repository to a specific commit, discarding changes.
+    - Example: git reset --hard abc1234
+
+24. git revert <commit>
+    - Create a new commit that undoes the changes of a previous commit.
+    - Example: git revert abc1234
