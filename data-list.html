@@ -1,0 +1,22 @@
+<!-- data-list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Users</title>
+</head>
+<body>
+    <h1>Registered Users</h1>
+    <ul id="userList"></ul>
+
+    <script>
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const list = document.getElementById('userList');
+        
+        users.forEach(user => {
+            const li = document.createElement('li');
+            li.textContent = `${user.name} - ${user.email}`;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>
